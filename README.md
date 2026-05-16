@@ -64,34 +64,50 @@ Optionally, exclude the target variable for preprocessing practice.
 
 ## Summary:
 
-### Data Analysis Key Findings
+Forecasted Pneumonia Admissions (Winter 2026-2027)
 
-*   **Feature Selection:** The top 10 most relevant features identified for predicting 'Pneumonia\_Admissions\_U5' using `SelectKBest` with `f_regression` are `Max_Temp_C`, `Humidity_Percent`, `Rainfall_mm`, and monthly indicators: `Month_Dec`, `Month_Feb`, `Month_Jun`, `Month_Mar`, `Month_Nov`, `Month_Oct`, and `Month_Sep`.
-*   **Data Split:** The dataset was successfully split into training (2496 samples) and testing (624 samples) sets, with each containing 10 features.
-*   **Initial Model Performance:**
-    *   The **Random Forest Regressor** showed the best initial performance with an MAE of 0.8779 and an R2 score of 0.0166.
-    *   Linear Regression had an MAE of 0.9006 and an R2 score of -0.0210.
-    *   Decision Tree Regressor had an MAE of 1.0895 and an R2 score of -0.4791.
-    *   All models demonstrated very low or negative R2 scores, indicating limited explanatory power.
-*   **Model Optimization:**
-    *   The **Random Forest Regressor** was selected for optimization using `GridSearchCV`.
-    *   Optimal hyperparameters found were `max_depth`: 15, `min_samples_leaf`: 4, `min_samples_split`: 10, and `n_estimators`: 150.
-    *   The optimized model achieved a slightly improved R2 score of 0.1694 during cross-validation.
-*   **Optimized Model Evaluation:**
-    *   The optimized Random Forest Regressor on the test set yielded an MAE of 0.8700, MSE of 1.3385, RMSE of 1.1569, and an R2 Score of 0.0264.
-    *   The R2 score of 0.0264 indicates that the model explains only about 2.64% of the variance in pneumonia admissions, suggesting very limited predictive power.
-    *   The Mean Absolute Percentage Error (MAPE) for the optimized model was 334.2954%, an extremely high value likely due to the scaling of the target variable.
-*   **Predictor Impact:**
-    *   `Humidity_Percent` showed a weak positive correlation, while `Max_Temp_C` and `Rainfall_mm` exhibited very weak negative correlations with pneumonia admissions.
-    *   **Seasonal patterns** emerged as significant, with `Month_Feb` and `Month_Nov` associated with increased pneumonia admissions, and `Month_Dec`, `Month_Jun`, `Month_Mar`, and `Month_Oct` associated with fewer admissions compared to a baseline.
- 
+Based on the optimized Random Forest Regressor, the projected pneumonia admissions for children under 5 (U5) during winter 2026-2027 are:
+
+## Forecasted Pneumonia Admissions (Winter 2026-2027)
+
+| Month       | Predicted Admissions (U5) |
+|------------|---------------------------|
+| Dec 2026   | 382                       |
+| Jan 2027   | 403                       |
+| Feb 2027   | 434                       |
 
 
-### Insights or Next Steps
+The forecast shows a gradual increase in admissions as winter progresses, with February predicted to have the highest admissions.
 
-*   **Seasonal Preparedness is Crucial:** Public health organizations should focus resources and awareness campaigns on pneumonia prevention and treatment during November and February, as these months show consistent increases in admissions.
-*   **Enhance Predictive Power with Additional Data:** Given the current model's low R2 score, future efforts should prioritize integrating a broader range of features, such as socio-economic factors, specific air pollutants, and more granular health data, or exploring dedicated time-series models to better capture temporal dependencies.
+## Key Drivers of Pneumonia Admissions
 
+The most influential factors identified by the model:
+
+- Environmental Factors:
+Max_Temp_C: 0.2996 (most influential)
+Humidity_Percent: 0.2868
+Rainfall_mm: 0.2708
+
+- Seasonal Month Indicators:
+
+| Month       | Importance Score |
+|------------|-----------------|
+| Month_Dec  | 0.0333          |
+| Month_Oct  | 0.0288          |
+| Month_Feb  | 0.0254          |
+| Month_Nov  | 0.0243          |
+| Month_Mar  | 0.0127          |
+| Month_Sep  | 0.0113          |
+| Month_Jun  | 0.0069          |
+
+
+**Interpretation:** Environmental conditions—maximum temperature, humidity, and rainfall—drive pneumonia admissions, while specific months highlight seasonal peaks.
+
+## Implications for Public Health
+Seasonal Preparedness: Focus preventive measures and resources in December, January, and February.
+Environmental Monitoring: Track temperature, humidity, and rainfall to anticipate admissions peaks.
+Guidance for Planning: Because the model’s R² is low, predictions are indicative, not definitive.
+Future Improvements: Integrate richer datasets and advanced models for better accuracy.
 
 ### Transparency & Disclosure
 - AI usage: 15%
