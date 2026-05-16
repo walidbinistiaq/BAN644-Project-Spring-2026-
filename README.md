@@ -1,5 +1,4 @@
-## Predicting Monthly Pneumonia Admissions in Under-5 Children in Bangladesh (Winter 2026)
-
+## Predicting Monthly Pneumonia Admissions in Under-5 Children in Bangladesh this winter
 ## Overview
 This project focuses on forecasting the number of pneumonia admissions for children under 5 years old in Bangladesh during the upcoming winter (Dec 2026 – Feb 2027). Pneumonia is a leading cause of hospitalization among young children, especially during cold months. Accurate predictions help hospitals plan resources, staffing, and preventive healthcare measures.
 
