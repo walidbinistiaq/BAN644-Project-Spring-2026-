@@ -94,5 +94,7 @@ Optionally, exclude the target variable for preprocessing practice.
 *   **Enhance Predictive Power with Additional Data:** Given the current model's low R2 score, future efforts should prioritize integrating a broader range of features, such as socio-economic factors, specific air pollutants, and more granular health data, or exploring dedicated time-series models to better capture temporal dependencies.
 
 
+### Transparency & Disclosure
+- AI usage: 15%
 
 
